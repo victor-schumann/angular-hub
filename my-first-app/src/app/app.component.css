@@ -6,3 +6,16 @@ body {
 h1 {
     color: darkblue;
 }
+
+.tasks {
+    display: flex;
+    justify-content: space-around;
+    justify-items: center;
+}
+
+.task {
+    border: 5px #000000 solid;
+    border-radius: 10px;
+    margin: auto;
+    padding: 1%;
+}
