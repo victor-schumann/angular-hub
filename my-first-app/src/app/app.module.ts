@@ -7,7 +7,9 @@ import { ServersComponent } from './servers/servers.component';
 import { WarningAlertComponent } from './warning-alert/warning-alert.component';
 import { SuccessAlertComponent } from './success-alert/success-alert.component';
 import { FormsModule } from '@angular/forms';
-import { UsertagComponent } from './usertag/usertag.component'; 
+import { UsertagComponent } from './usertag/usertag.component';
+import { Task3Component } from './task3/task3.component';
+import { Task2Component } from './task2/task2.component'; 
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { UsertagComponent } from './usertag/usertag.component';
     WarningAlertComponent,
     SuccessAlertComponent,
     UsertagComponent,
+    Task3Component,
+    Task2Component,
   ],
   imports: [
     BrowserModule,

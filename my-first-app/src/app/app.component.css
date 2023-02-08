@@ -10,12 +10,15 @@ h1 {
 .tasks {
     display: flex;
     justify-content: space-around;
-    justify-items: center;
 }
 
 .task {
     border: 5px #000000 solid;
     border-radius: 10px;
-    margin: auto;
     padding: 1%;
 }
+
+/* .col-xs-12 {
+    display: flex;
+    flex-direction: column;
+} */

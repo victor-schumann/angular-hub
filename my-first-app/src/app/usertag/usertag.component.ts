@@ -8,21 +8,20 @@ import { Component } from '@angular/core';
 export class UsertagComponent {
   username = 'Not set';
   usernameCreationStatus = 'Username was not set';
-  allowUsernameUpdate = true;
-
-  blankNameCheck() {
-    if ((<HTMLInputElement>event.target).value != '')
-    this.allowUsernameUpdate = false;
-
-  }
+/*   allowUsernameUpdate = true; */
 
   onUpdateUsername(event: any) {
-     {
-      this.username = (<HTMLInputElement>event.target).value;
-    }
+    this.username = (<HTMLInputElement>event.target).value;
   }
 
   onCreateUsername() {
-    this.usernameCreationStatus = 'Username was created! Name is [' + this.username + ']';
+    this.usernameCreationStatus = "Username was created! Name is '" + this.username + "'";
+  }
+
+  allowUsernameUpdate(): boolean {
+    if ((this.username == 'Not set') || (this.username == '')) {
+      return false;
+      } 
+    console.log("Check Username is being used!")
   }
 }

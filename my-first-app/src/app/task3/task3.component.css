@@ -1,0 +1,18 @@
+.buttons {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.my-button {
+    padding: 1%;
+    margin: 3%;
+}
+
+.text {
+    width:30em;
+}
+
+.white-text {
+    color:white;
+}

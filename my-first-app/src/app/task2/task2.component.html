@@ -1,0 +1,6 @@
+<h3>task #2</h3>
+<input type="text" class="form-control" [(ngModel)]="username2">
+<button class="btn btn-primary" [disabled]="username2 === ''" (click)="username2 = ''">Reset
+    Username
+</button>
+<h4>USERNAME: {{ username2 }}</h4>

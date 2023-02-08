@@ -1,0 +1,22 @@
+<h3>task #3</h3>
+<div class="buttons">
+    <button class="my-button"
+    [disabled]="showParagraph"
+    (click)="onDisplayParagraph()">Display Details
+    </button>
+
+    <button class="my-button"
+    [disabled]="!showParagraph"
+    (click)="onHideParagraph()">Hide Details
+    </button>
+</div>
+<div class="text">
+    <p *ngIf="showParagraph && log.length===1">{{ secretParagraph }} {{ log.length }} time!</p>
+    <p *ngIf="showParagraph && log.length>1">{{ secretParagraph }} {{ log.length }} times!</p>
+    <ul>
+        <div *ngFor="let logItem of log; let i = index"
+        [ngStyle]="{backgroundColor: i>=2 ? 'blue':'transparent'}"
+        [ngClass]="{'white-text': i>=2}"
+        >{{ logItem }}</div>
+    </ul>
+</div>
