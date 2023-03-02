@@ -5,6 +5,13 @@
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
+
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
