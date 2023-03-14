@@ -48,8 +48,8 @@ export class RecipeService {
     return this.recipes.slice();
   }
 
-/*   addIngredientsToShoppingList(ingredients: Ingredient[]) {
+  addIngredientsToShoppingList(ingredients: Ingredient[]) {
     this.slService.addIngredients(ingredients);
-  }  */
+  } 
 }
 

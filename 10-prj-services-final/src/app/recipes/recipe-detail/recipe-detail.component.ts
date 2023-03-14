@@ -8,9 +8,8 @@ import { RecipeService } from '../recipe.service';
   templateUrl: './recipe-detail.component.html',
   styleUrls: ['./recipe-detail.component.css']
 })
-
 export class RecipeDetailComponent implements OnInit {
-  @Input() recipe!: Recipe;
+  @Input() recipe: Recipe;
 
   constructor(private recipeService: RecipeService) { }
 
