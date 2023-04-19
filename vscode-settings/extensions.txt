@@ -1,5 +1,6 @@
 aaron-bond.better-comments
 Angular.ng-template
+anweber.dot-icons
 dbaeumer.vscode-eslint
 esbenp.prettier-vscode
 GitHub.vscode-pull-request-github
@@ -14,6 +15,5 @@ ms-toolsai.jupyter-renderers
 ms-toolsai.vscode-jupyter-cell-tags
 ms-toolsai.vscode-jupyter-slideshow
 nerosiar.just-black
-PKief.material-icon-theme
 TabNine.tabnine-vscode
 yzhang.markdown-all-in-one
