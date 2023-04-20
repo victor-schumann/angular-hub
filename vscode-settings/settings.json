@@ -1,5 +1,14 @@
 {
+    "tabnine.experimentalAutoImports": true,
+    "workbench.iconTheme": "dot_small_gray",
     "workbench.colorTheme": "Just Black",
-    "workbench.iconTheme": "material-icon-theme",
-    "tabnine.experimentalAutoImports": true
+    "editor.inlineSuggest.enabled": true,
+    "git.enableSmartCommit": true,
+    "git.autofetch": true,
+    "explorer.confirmDelete": false,
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "window.zoomLevel": 1,
+    "editor.wordWrap": "on"
 }
