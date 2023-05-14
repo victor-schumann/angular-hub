@@ -27,6 +27,10 @@ export class RecipeEditComponent implements OnInit {
     )
   }
 
+  onSubmit(): void {
+    console.log(this.recipeForm);
+  }
+
   private initForm(): void {
     const recipe = this.recipeService.getRecipe(this.id);
     let recipeName = '';
