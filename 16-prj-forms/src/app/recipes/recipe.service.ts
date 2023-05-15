@@ -1,15 +1,16 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 
-import { Ingredient } from "../shared/ingredient.model";
-import { Recipe } from "./recipe.model";
+import { Ingredient } from '../shared/ingredient.model';
+import { Recipe } from './recipe.model';
 import { ShoppingListService } from '../shopping-list/shopping-list.service';
-
+import { Subject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-
 export class RecipeService {
+  recipesChanged = new Subject<Recipe[]>();
+
   private recipes: Recipe[] = [
     new Recipe(
       'Tasty Schnitzel',
@@ -18,10 +19,12 @@ export class RecipeService {
       [
         new Ingredient('Meat', 1),
         new Ingredient('French Fries', 20),
-        new Ingredient('Salad', 1)
-      ]),
-      
-    new Recipe('A Questionable Burger',
+        new Ingredient('Salad', 1),
+      ]
+    ),
+
+    new Recipe(
+      'A Questionable Burger',
       'What else you need to say?',
       'https://claudia.abril.com.br/wp-content/uploads/2020/02/receita-acaraje-02.jpg?quality=85&strip=info',
       [
@@ -37,13 +40,14 @@ export class RecipeService {
         new Ingredient('Cilantro', 1),
         new Ingredient('Salt', 1),
         new Ingredient('Pepper', 1),
-        new Ingredient('Lime Wedges', 1)
-      ])
+        new Ingredient('Lime Wedges', 1),
+      ]
+    ),
   ];
 
   constructor(private slService: ShoppingListService) {}
 
-   getRecipes() {
+  getRecipes() {
     return this.recipes.slice();
   }
 
@@ -53,6 +57,15 @@ export class RecipeService {
 
   addIngredientsToShoppingList(ingredients: Ingredient[]) {
     this.slService.addIngredients(ingredients);
-  } 
-}
+  }
 
+  addRecipe(recipe: Recipe) {
+    this.recipes.push(recipe);
+    this.recipesChanged.next(this.recipes.slice());
+  }
+
+  updateRecipe(index: number, newRecipe: Recipe) {
+    this.recipes[index] = newRecipe;
+    this.recipesChanged.next(this.recipes.slice());
+  }
+}

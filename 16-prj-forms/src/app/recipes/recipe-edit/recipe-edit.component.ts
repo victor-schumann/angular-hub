@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params } from '@angular/router';
 import { RecipeService } from '../recipe.service';
+import { Recipe } from '../recipe.model';
 
 @Component({
   selector: 'app-recipe-edit',
@@ -18,6 +19,11 @@ export class RecipeEditComponent implements OnInit {
     private recipeService: RecipeService
   ) {}
 
+  get controls() {
+    // a getter!
+    return (<FormArray>this.recipeForm.get('ingredients')).controls;
+  }
+
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
       this.id = +params['id'];
@@ -28,12 +34,18 @@ export class RecipeEditComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log(this.recipeForm);
-  }
+    /* console.log(this.recipeForm); */
+    /* const newRecipe = new Recipe(
+      this.recipeForm.value['name'],
+      this.recipeForm.value['description'],
+      this.recipeForm.value['imagePath'],
+      this.recipeForm.value['ingredients']); */
 
-  get controls() {
-    // a getter!
-    return (<FormArray>this.recipeForm.get('ingredients')).controls;
+    if (this.editMode) {
+      this.recipeService.updateRecipe(this.id, this.recipeForm.value);
+    } else {
+      this.recipeService.addRecipe(this.recipeForm.value);
+    }
   }
 
   private initForm(): void {
