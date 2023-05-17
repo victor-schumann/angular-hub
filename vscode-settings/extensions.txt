@@ -15,5 +15,7 @@ ms-toolsai.jupyter-renderers
 ms-toolsai.vscode-jupyter-cell-tags
 ms-toolsai.vscode-jupyter-slideshow
 nerosiar.just-black
+nur.just-black
 TabNine.tabnine-vscode
 yzhang.markdown-all-in-one
+
