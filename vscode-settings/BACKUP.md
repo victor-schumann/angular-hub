@@ -28,5 +28,8 @@ npm -v
 
 ## For extensions
 1. Open a command prompt or terminal window.
-2. Run the following command: `xargs -a extensions.txt -L 1 code --install-extension`
+2. Run the following command: 
+```
+xargs -a extensions.txt -L 1 code --install-extension
+```
 3. This will install all the extensions listed in the "extensions.txt" file.
